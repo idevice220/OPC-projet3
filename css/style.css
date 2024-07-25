@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* FONT */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .roboto-light {
     font-family: "Roboto", sans-serif;
@@ -28,6 +29,29 @@
     font-weight: 700;
     font-style: normal;
   }
+
+
+/* ICONES */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  
+  .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+
+
+
+/* CSS */
 
 body {
     background-color: #ffffff;
@@ -81,26 +105,10 @@ header h2 {
     align-items: center;
     justify-content: center;
     display: flex;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
-  
+}  
 
 .reserver {
+    width: 100%;
     height: 280px;
     display: flex;
     flex-direction: column;
@@ -109,20 +117,23 @@ header h2 {
 }
 
 .reserver h1 {
-    width: 90%;
+    /* width: 90%; */
     font-size: 24px;
     color: black;
     display: flex;
     margin-top: 40px;
     text-align: center;
+    align-items: center;
 }
 
 .reserver p {
-    width: 90%;
+    /* width: 90%; */
     font-size: 18px;
     color: black;
     display: flex;
     text-align: center;
+    align-items: center;
+
 }
 
 .reserver button {
@@ -151,6 +162,15 @@ header h2 {
     margin-top: 20px;
 }
 
+.fonctionnement .ligne {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .fonctionnement .bulle {
     display: flex;
     flex-direction: row;
@@ -161,6 +181,7 @@ header h2 {
     width: 80%;
     padding: 20px;
     margin-left: 20px;
+    margin-right: 20px;
     border-radius: 20px;
     box-shadow: 0px 5px 5px rgb(194, 194, 194);
     justify-items: center;
@@ -174,6 +195,14 @@ header h2 {
     flex-direction: column;
     padding-bottom: 40px;
 }
+.groupcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    
+}
 
 .restaurant h1 {
     margin-top: 40px;
@@ -182,15 +211,17 @@ header h2 {
     margin-bottom: 0px;
 }
 
+
 .restaurant .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 20px;
     background-color: #ffffff;
     width: 340px;
     align-items: center;
     margin-left: 20px;
+    margin-right: 20px;
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -265,4 +296,121 @@ footer h4 {
     margin-top: 0px;
     margin-bottom: 20px;
     font-size: 24px;
+}
+
+@media screen and (min-width: 600px) {
+    .restaurant .card {
+        width: 500px;
+    }
+
+    .restaurant img {
+        width: 500px;
+        height: 250px;
+    }
+
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .fonctionnement {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 250px;
+    
+    }
+    .fonctionnement .titre {
+        margin-left: 20px;
+        margin-top: 20px;
+        display: flex;
+        align-items: left;
+        margin-right: 30px;
+        width: 80%;
+    }
+
+    .fonctionnement .ligne {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .restaurant {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .restaurant h1 {
+        display: flex;
+        align-items: left;
+        width: 80%;
+    }
+
+
+
+    .groupcard {
+        display: grid;
+        /* grid-template-columns: 4fr 4fr; */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+    }
+
+    .restaurant .card {
+        width: 350px;
+    }
+
+    .restaurant img {
+        width: 350px;
+        height: 250px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 166px;
+        width: 100%;
+        justify-content:end;
+
+    }
+    .footer p {
+        display: flex;
+        margin-right: 10px;
+        margin-left: 10px;
+        align-items: end;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .footer h4 {
+        display: flex;
+        margin-right: 10px;
+        margin-left: 50px;
+        align-items: end;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    footer {
+        display: flex;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+    .restaurant .card {
+        width: 500px;
+    }
+
+    .restaurant img {
+        width: 500px;
+        height: 250px;
+    }
+
 }
