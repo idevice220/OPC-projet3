@@ -136,7 +136,7 @@ header h2 {
 
 }
 
-.reserver button {
+.reserver a {
     margin-bottom: 100px;
     padding: 13px;
     box-shadow: 0px 5px 5px rgb(194, 194, 194);
@@ -145,6 +145,12 @@ header h2 {
     background: linear-gradient(177deg, rgba(224,111,218,1) 0%, rgba(175,95,219,1) 100%);
     color: white;
     border: none;
+    text-decoration: none;
+}
+
+.reserver a:hover {
+    background: rgb(235,134,224);
+    background: linear-gradient(180deg, rgba(235,134,224,1) 0%, rgba(182,118,225,1) 100%);
 }
 
 .fonctionnement {
@@ -287,6 +293,7 @@ footer {
 footer p {
     margin-top: 0px;
     margin-bottom: 10px;
+    margin-left: 10px;
     text-align: center;
     text-align: left;
 }
@@ -296,6 +303,7 @@ footer h4 {
     margin-top: 0px;
     margin-bottom: 20px;
     font-size: 24px;
+    margin-left: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -308,10 +316,20 @@ footer h4 {
         height: 250px;
     }
 
+    .reserver a {
+        padding: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+    }
+
 }
 
 
+
 @media screen and (min-width: 1000px) {
+
+    
 
     .fonctionnement {
         display: flex;
