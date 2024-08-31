@@ -1,0 +1,461 @@
+/* VARIABLES */
+$white: #ffffff;
+$light-grey: #F6F6F6;
+$dark-grey: #363636;
+$violet: #9356DC;
+$green: #99E2D0;
+$gradient-pink: linear-gradient(177deg, rgba(224,111,218,1) 0%, rgba(175,95,219,1) 100%);
+$gradient-hover: linear-gradient(177deg, rgb(247, 22, 236) 0%, rgb(158, 78, 198) 100%);
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
+
+@mixin roboto-font($weight, $style: normal) {
+  font-family: "Roboto", sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+.roboto-light { @include roboto-font(300); }
+.roboto-regular { @include roboto-font(400); }
+.roboto-inter { @include roboto-font(500); }
+.roboto-medium { @include roboto-font(600); }
+.roboto-large { @include roboto-font(700); }
+
+/* PAGE LAYOUT */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 1;
+  }
+}
+
+/* ICONES */
+@mixin material-icons($fill: 0, $weight: 400, $grad: 0, $opsz: 24) {
+  font-variation-settings: 
+    'FILL' $fill, 
+    'wght' $weight, 
+    'GRAD' $grad, 
+    'opsz' $opsz;
+}
+
+.material-symbols-outlined { @include material-icons(1); }
+.material-symbols-outlined { @include material-icons(0); }
+
+/* BODY */
+body {
+  background-color: $white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* HEADER */
+header {
+  min-width: 375px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .return {
+    position: absolute;
+    left: 0;
+    display: flex;
+    margin-left: 20px;
+  }
+
+  .logo {
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 200px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+/* IMAGE */
+.img-top {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* MENU */
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey;
+  width: 100%;
+  margin-top: -35px;
+  z-index: 10;
+  border-radius: 50px 50px 0 0;
+
+  h1 {
+    font-size: 28px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.categorie {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 90%;
+  position: relative;
+
+  .titre-categorie {
+    font-size: 16px;
+    margin-left: 10px;
+    width: fit-content;
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }
+
+  .trait-categorie {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    border-bottom: solid 2px $green;
+    top: 40px;
+    left: 10px;
+  }
+}
+
+.restostar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+  width: 90%;
+
+  input {
+    opacity: 0;
+    position: absolute;
+    right: 10%;
+    z-index: 999;
+    width: 30px;
+    height: 30px;
+  }
+
+  span {
+    position: absolute;
+    right: 10%;
+    font-size: 30px;
+  }
+
+  i {
+    position: absolute;
+    right: 10%;
+    opacity: 0;
+    font-size: 30px;
+    color: $violet;
+    transition: all 0.5s ease-in-out;
+  }
+
+  input:checked + span {
+    opacity: 0;
+  }
+
+  input:checked + span + i {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+  }
+
+  input:hover + span {
+    opacity: 0;
+  }
+
+  input:hover + span + i {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.card-plat {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px rgb(242 234 234);
+  background-color: $white;
+  height: 80px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-out;
+
+
+  &:hover > .prix-plat {
+    animation: checkanim 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  &:not(:hover) .prix-plat {
+    animation: checkanimreverse 0.3s both;
+  }
+
+  @keyframes checkanim {
+    0% { width: 0px; }
+    100% { width: 60px; }
+  }
+
+
+  @keyframes checkanimreverse {
+    0% { width: 60px; }
+    100% { width: 0px; }
+  }
+
+  .check {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    background-color: $green;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &:hover > .check {
+    animation: checkanim 0.3s;
+    animation-fill-mode: forwards;
+    display: flex;
+  }
+  
+
+  &:not(:hover) .check {
+    width: 0;
+    height: 100%;
+    animation: checkanimreverse 0.3s both;
+  }
+
+  .titre-plat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    height: 50px;
+
+    h2 {
+      font-size: 18px;
+      margin: 0;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+
+  .prix-plat {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: #353535;
+    height: 100%;
+    top: 10px;
+    transition: all 0.5s ease-out;
+
+  }
+}
+
+
+/* COMMANDER BUTTON */
+.commander {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 40%;
+    padding: 20px;
+    box-shadow: 0px 5px 5px rgb(194, 194, 194);
+    border-radius: 30px;
+    background: $gradient-pink;
+    color: white;
+    border: none;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 1s ease, box-shadow 1s ease;
+
+    &:hover {
+      background: $gradient-hover;
+      box-shadow: 0px 5px 15px rgb(129, 121, 121);
+      
+    }
+  }
+}
+
+/* FOOTER */
+footer {
+  color: $white;
+  background-color: $dark-grey;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+
+  .footer-logo {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+  }
+
+  .links {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  p {
+    margin: 0 0 10px 10px;
+    text-align: left;
+  }
+
+  h4 {
+    margin: 0 0 20px 20px;
+    font-size: 24px;
+  }
+}
+
+.shrikhand-regular {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px) {
+  .menu {
+    width: 70%;
+  }
+
+  .categorie {
+    margin-bottom: 10px;
+  }
+
+  .img-top {
+    height: 400px;
+  }
+
+  .page-container {
+    align-items: center;
+  }
+
+  .restostar {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      margin-right: 20px;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .commander a {
+    margin-bottom: 30px;
+    width: 20%;
+    padding: 15px 10px;
+  }
+
+  footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 114px;
+    align-items: center;
+
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+
+    p {
+      display: flex;
+      margin: 0 10px;
+      align-items: end;
+      text-wrap: nowrap;
+      flex-direction: row-reverse;
+    }
+
+    h4 {
+      display: flex;
+      margin: 0 50px 0 50px;
+      align-items: end;
+      flex-direction: row-reverse;
+    }
+
+    .logo-footer {
+      align-items: end;
+      justify-content: center;
+      padding-right: 0;
+      width: fit-content;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 0px;
+    }
+
+    .footer-logo {
+      align-items: flex-end;
+    }
+  }
+}
+}
