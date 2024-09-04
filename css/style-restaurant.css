@@ -230,12 +230,15 @@ header .logo img {
 @keyframes checkanimreverse {
   0% {
     width: 60px;
+    height: 100%;
   }
   100% {
     width: 0px;
+    height: 100%;
   }
 }
 .card-plat .check {
+  display: flex;
   position: absolute;
   right: 0;
   height: 100%;
@@ -252,7 +255,11 @@ header .logo img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff;
+  color: #99E2D0;
+  border-radius: 100%;
 }
 .card-plat:hover > .check {
   animation: checkanim 0.3s;
@@ -261,8 +268,8 @@ header .logo img {
 }
 .card-plat:not(:hover) .check {
   width: 0;
-  height: 100%;
-  animation: checkanimreverse 0.3s both;
+  height: auto;
+  animation: 0.3s backwards;
 }
 .card-plat .titre-plat {
   display: flex;
@@ -351,6 +358,11 @@ footer h4 {
   margin: 0 0 20px 20px;
   font-size: 24px;
 }
+footer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+}
 
 .shrikhand-regular {
   font-family: "Shrikhand", serif;
@@ -373,7 +385,8 @@ footer h4 {
     align-items: center;
   }
   .restostar {
-    width: 70%;
+    width: -moz-fit-content;
+    width: fit-content;
     justify-content: center;
     align-items: center;
   }
@@ -382,6 +395,15 @@ footer h4 {
   }
   .restostar span {
     margin-left: 10px;
+  }
+  .restostar input {
+    right: -10%;
+  }
+  .restostar span {
+    right: -10%;
+  }
+  .restostar i {
+    right: -10%;
   }
   .commander a {
     margin-bottom: 30px;

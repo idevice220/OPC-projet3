@@ -184,7 +184,7 @@ header .Belleville i {
 }
 .fonctionnement .bulle .numero {
   position: absolute;
-  left: -5%;
+  left: -10px;
   color: #ffffff;
   background: #9356DC;
   font-size: 20px;
@@ -233,9 +233,6 @@ header .Belleville i {
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
   z-index: 10;
-}
-.restaurant .card:active {
-  transform: scale(1.05);
 }
 .restaurant .card .nouveau-restaurant {
   position: absolute;
@@ -344,6 +341,11 @@ footer .footer-logo {
   display: flex;
   flex-direction: row;
   margin: 0 10px;
+}
+footer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 .shrikhand-regular {
