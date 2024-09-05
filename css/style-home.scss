@@ -246,10 +246,6 @@ header {
     transition: all 0.5s ease-in-out;
     z-index: 10;
 
-    // &:active {
-    //   transform: scale(1.05);
-    // }
-
     .nouveau-restaurant {
       position: absolute;
       right: 5%;
@@ -298,9 +294,14 @@ header {
         margin-top: -10px;
       }
     }
+  }
 
     .droite {
-      input {
+      position: absolute; /* pour faciliter la position des éléments */
+      right: 5px;
+      bottom: 0px;
+      
+      input[type="checkbox"] {
         opacity: 0;
         position: absolute;
         right: 10px;
@@ -308,9 +309,10 @@ header {
         height: 20px;
         width: 30px;
         z-index: 999;
+        cursor: pointer;
       }
 
-      span {
+      .material-symbols-outlined {
         position: absolute;
         display: flex;
         right: 20px;
@@ -318,9 +320,10 @@ header {
         font-size: 30px;
         z-index: 200;
         transition: all 0.5s ease-in;
+        cursor: pointer;
       }
 
-      i {
+      i.fa-heart {
         position: absolute;
         right: 20px;
         bottom: 40px;
@@ -328,26 +331,29 @@ header {
         color: $violet;
         opacity: 0;
         transition: all 0.5s ease-in-out;
+        cursor: pointer;
       }
 
-      .checkbox:hover + .material-symbols-outlined {
-        opacity: 0; 
+      /* Ajout des bons sélecteurs pour que le CSS réagisse */
+      input[type="checkbox"]:hover + .material-symbols-outlined {
+        opacity: 0;
       }
 
-      .checkbox:checked + .material-symbols-outlined {
-        opacity: 0; 
+      input[type="checkbox"]:checked + .material-symbols-outlined {
+        opacity: 0;
       }
 
-      .checkbox:hover + .material-symbols-outlined + .fa-heart {
+      input[type="checkbox"]:hover + .material-symbols-outlined + i.fa-heart {
         opacity: 1;
       }
 
-      .checkbox:checked + .material-symbols-outlined + .fa-heart {
+      input[type="checkbox"]:checked + .material-symbols-outlined + i.fa-heart {
         opacity: 1;
       }
     }
-  }
 }
+
+
 
 /* FOOTER */
 footer {

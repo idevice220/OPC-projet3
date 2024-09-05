@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* VARIABLES */
 /* FONT */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -278,7 +279,13 @@ header .Belleville i {
   font-weight: 300;
   margin-top: -10px;
 }
-.restaurant .description .droite input {
+.restaurant .droite {
+  position: absolute; /* pour faciliter la position des éléments */
+  right: 5px;
+  bottom: 0px;
+  /* Ajout des bons sélecteurs pour que le CSS réagisse */
+}
+.restaurant .droite input[type=checkbox] {
   opacity: 0;
   position: absolute;
   right: 10px;
@@ -286,8 +293,9 @@ header .Belleville i {
   height: 20px;
   width: 30px;
   z-index: 999;
+  cursor: pointer;
 }
-.restaurant .description .droite span {
+.restaurant .droite .material-symbols-outlined {
   position: absolute;
   display: flex;
   right: 20px;
@@ -295,8 +303,9 @@ header .Belleville i {
   font-size: 30px;
   z-index: 200;
   transition: all 0.5s ease-in;
+  cursor: pointer;
 }
-.restaurant .description .droite i {
+.restaurant .droite i.fa-heart {
   position: absolute;
   right: 20px;
   bottom: 40px;
@@ -304,17 +313,18 @@ header .Belleville i {
   color: #9356DC;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
-.restaurant .description .droite .checkbox:hover + .material-symbols-outlined {
+.restaurant .droite input[type=checkbox]:hover + .material-symbols-outlined {
   opacity: 0;
 }
-.restaurant .description .droite .checkbox:checked + .material-symbols-outlined {
+.restaurant .droite input[type=checkbox]:checked + .material-symbols-outlined {
   opacity: 0;
 }
-.restaurant .description .droite .checkbox:hover + .material-symbols-outlined + .fa-heart {
+.restaurant .droite input[type=checkbox]:hover + .material-symbols-outlined + i.fa-heart {
   opacity: 1;
 }
-.restaurant .description .droite .checkbox:checked + .material-symbols-outlined + .fa-heart {
+.restaurant .droite input[type=checkbox]:checked + .material-symbols-outlined + i.fa-heart {
   opacity: 1;
 }
 
