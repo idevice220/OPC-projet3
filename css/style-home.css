@@ -43,20 +43,11 @@
 }
 
 /* CSS */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 body {
   background-color: #ffffff;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  animation: fadeIn 0.3s ease-in;
 }
 
 header {
@@ -283,7 +274,6 @@ header .Belleville i {
   position: absolute; /* pour faciliter la position des éléments */
   right: 5px;
   bottom: 0px;
-  /* Ajout des bons sélecteurs pour que le CSS réagisse */
 }
 .restaurant .droite input[type=checkbox] {
   opacity: 0;

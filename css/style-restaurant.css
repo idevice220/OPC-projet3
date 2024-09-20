@@ -59,17 +59,8 @@ body {
   padding: 0;
   height: -moz-fit-content;
   height: fit-content;
-  animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* HEADER */
 header {
   min-width: 375px;
