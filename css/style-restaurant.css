@@ -144,10 +144,10 @@ header .logo img {
   animation-delay: 0.5s;
 }
 .categorie .categorie:nth-child(2) {
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 .categorie .categorie:nth-child(3) {
-  animation-delay: 1.5s;
+  animation-delay: 5s;
 }
 .categorie .titre-categorie {
   font-size: 16px;
