@@ -50,6 +50,50 @@ body {
   padding: 0;
 }
 
+@keyframes loader {
+  100% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.loader-container {
+  position: absolute;
+  background: #f1f1f1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+  animation: opacity 2s ease-in-out forwards;
+  z-index: 1000;
+}
+.loader-container .dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+  margin: 0 15px;
+  animation: loader infinite 0.3s alternate;
+}
+.loader-container .d2 {
+  animation-delay: 0.1s;
+}
+.loader-container .d3 {
+  animation-delay: 0.2s;
+}
+
 header {
   min-width: 375px;
   height: 113px;
